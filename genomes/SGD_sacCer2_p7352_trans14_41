@@ -1,0 +1,4 @@
+# MSK Chr convention (chr01, chr02, ...)
+GENOME_DIR=/home/socci/Work/Users/KeeneyS/MurakamH/Proj_07352/Genomes/SGD_sacCer2_p7352_trans14_41
+GENOME_FASTA=$GENOME_DIR/SGD_sacCer2_p7352_trans14_41.fa
+GENOME_BWA=$GENOME_DIR/SGD_sacCer2_p7352_trans14_41.fa
