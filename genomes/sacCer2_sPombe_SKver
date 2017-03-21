@@ -1,0 +1,4 @@
+# MSK Chr convention (chr01, chr02, ...)
+GENOME_DIR=/home/socci/Work/Users/KeeneyS/Genomes/hybrids/S.cerevisiae+S.pombe
+GENOME_FASTA=$GENOME_DIR/sacCer2_sPombe_SKver.fa
+GENOME_BWA=$GENOME_DIR/sacCer2_sPombe_SKver.fa
