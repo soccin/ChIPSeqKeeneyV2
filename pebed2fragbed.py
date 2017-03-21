@@ -2,7 +2,7 @@
 
 import sys
 
-MAX_INSERT_SIZE=10000
+MAX_INSERT_SIZE=int(sys.argv[1])
 
 for line in sys.stdin:
     (chrom1,start1,end1,
