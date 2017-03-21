@@ -36,5 +36,11 @@ QRUN 2 ${TAG}___SRTQN___${SAMPLE} HOLD $PETAG VMEM 36 \
         I=out___/${SAMPLE}___MD.bam \
         O=out___/${SAMPLE}___MD,SrtQN.bam
 
+#
+# Set insert size
+#
+
+MAX_INSERT_SIZE=250
+
 QRUN 4 ${TAG}___COV___${SAMPLE} HOLD ${TAG}___SRTQN___${SAMPLE} \
-    $SDIR/getCoverage.sh out___/${SAMPLE}___MD,SrtQN.bam ${GENOME_FASTA/.fa/.genome}
+    $SDIR/getCoverage.sh $MAX_INSERT_SIZE out___/${SAMPLE}___MD,SrtQN.bam ${GENOME_FASTA/.fa/.genome}
