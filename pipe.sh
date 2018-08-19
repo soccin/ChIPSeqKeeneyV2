@@ -1,5 +1,11 @@
 #!/bin/bash
 SDIR="$( cd "$( dirname "$0" )" && pwd )"
+
+if [ "$#" -lt "3" ]; then
+    echo "usage: ./ChIPSeqKeeneyV2/pipe.sh GENOME SAMPLE_NAME FASTQ_DIR"
+    exit
+fi
+
 GENOME=$1
 SAMPLE=$2
 shift 2
