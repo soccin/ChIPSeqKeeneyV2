@@ -1,0 +1,3 @@
+GENOME_DIR=/home/socci/Work/Users/KeeneyS/Genomes/hybrids/S.cerevisiae+S.mikatae+sacEub_Chr5
+GENOME_FASTA=$GENOME_DIR/sacCer2_sMik_sEubV.fa
+GENOME_BWA=$GENOME_DIR/BWA_0.7.15/sacCer2_sMik_sEubV.fa
