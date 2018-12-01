@@ -15,8 +15,8 @@ source $SDIR/PEMapper/bin/lsf.sh
 TDIR=$(pwd)/_scratch/chipV2/$(uuidgen -t)
 mkdir -p $TDIR
 
-if [ -e $SDIR/lib/genomes/$GENOME ]; then
-    source $SDIR/lib/genomes/$GENOME
+if [ -e $SDIR/genomes/$GENOME ]; then
+    source $SDIR/genomes/$GENOME
 else
     if [ -e $GENOME ]; then
         source $GENOME
@@ -24,7 +24,7 @@ else
         echo
         echo GENOME=$GENOME Not Defined
         echo "Currently available (builtin) genomes"
-        ls -1 $SDIR/lib/genomes
+        ls -1 $SDIR/genomes
         echo
         exit
     fi
