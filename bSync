@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LSFBIN=/common/lsf/9.1/linux2.6-glibc2.3-x86_64/bin
+LSFBIN=/common/juno/OS7/10.1/linux3.10-glibc2.17-x86_64/bin
 
 JOBNAME=$1
 
@@ -14,7 +14,7 @@ getLastJobNo() {
 HOLDJOB=$(getLastJobNo)
 while [ "$HOLDJOB" != "" ]; do
     echo "JOB =" $JOBNAME "holding on jid =" $HOLDJOB
-    $LSFBIN/bsub -R "rusage[iounits=0]" -We 1 -w "post_done($HOLDJOB)" -J bSync_${JOBNAME}_$$ -K echo "$JOBNAME"
+    $LSFBIN/bsub -W 1 -w "post_done($HOLDJOB)" -J bSync_${JOBNAME}_$$ -K echo "$JOBNAME"
     sleep 3
     HOLDJOB=$(getLastJobNo)
 done
