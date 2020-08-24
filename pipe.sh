@@ -40,8 +40,13 @@ fi
 TAG=csTAG_$(uuidgen -t)
 
 $SDIR/PEMapper/pipe.sh -s $SAMPLE $GENOME $* >$TDIR/pemapper_${SAMPLE}.log
+
+
+#
+# Get final TAG from PEMapper run to hold on
+#
 sleep 2
-PETAG=$(egrep "^QTAG=.*__MD" $TDIR/pemapper_${SAMPLE}.log| sed 's/.*=//')
+PETAG=$(egrep "^QTAG=" $TDIR/pemapper_${SAMPLE}.log | tail -1 | sed 's/.*=//')
 echo PETAG=$PETAG
 
 QRUN 2 ${TAG}___SRTQN___${SAMPLE} HOLD $PETAG VMEM 36 \
