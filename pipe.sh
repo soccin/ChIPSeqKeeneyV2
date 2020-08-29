@@ -19,6 +19,8 @@ fi
 
 source $SDIR/PEMapper/bin/lsf.sh
 
+module load bedtools
+
 TDIR=$(pwd)/_scratch/chipV2/$(uuidgen -t)
 mkdir -p $TDIR
 
