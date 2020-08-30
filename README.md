@@ -7,3 +7,5 @@ Pipeline steps:
 * Mapped with BWA MEM
 * Sort by Queryname with PICARD
 * Compute coverage using a custom script of bedtools and custom python code
+
+* Get coverage per choromosomes with getChromoCounts.sh and computeCounts.R
