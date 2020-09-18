@@ -4,6 +4,8 @@ SDIR="$( cd "$( dirname "$0" )" && pwd )"
 MAX_INSERT_SIZE=$1
 BAM=$2
 
+module load bedtools
+
 #
 # -f2 Proper Pairing Flag
 # -F2048 !secondary alignments
