@@ -13,7 +13,7 @@ shift 2
 if [ ! -e $SDIR/PEMapper/bin/lsf.sh ]; then
     echo
     echo "   Remember to do submodule to get PEMapper submod"
-    echo
+    echo "      git clone --recurse-submodules gitURL"
     exit
 fi
 
