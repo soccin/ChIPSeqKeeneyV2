@@ -2,6 +2,13 @@
 
 ODIR=$1
 
+if [ $# != "1" ]; then
+    echo
+    echo "    "usage: delivery.sh /ifs/res/seq/pi/invest/Proj_NNNNN/r_000
+    echo
+    exit
+fi
+
 SPECIESCOUNTS=$(ls | egrep "__SpeciesCounts.xlsx$")
 
 mkdir -p $ODIR/alignment
