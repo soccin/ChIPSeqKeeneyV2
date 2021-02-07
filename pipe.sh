@@ -52,7 +52,7 @@ PETAG=$(egrep "^QTAG=" $TDIR/pemapper_${SAMPLE}.log | tail -1 | sed 's/.*=//')
 echo PETAG=$PETAG
 
 QRUN 2 ${TAG}___SRTQN___${SAMPLE} HOLD $PETAG VMEM 36 \
-    picard.local SortSam SO=queryname \
+    picardV2 SortSam SO=queryname \
         I=out___/${SAMPLE}___MD.bam \
         O=out___/${SAMPLE}___MD,SrtQN.bam
 
