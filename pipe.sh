@@ -24,6 +24,8 @@ module load bedtools
 TDIR=$(pwd)/_scratch/chipV2/$(uuidgen -t)
 mkdir -p $TDIR
 
+echo TDIR=$TDIR
+
 if [ -e $SDIR/genomes/$GENOME ]; then
     source $SDIR/genomes/$GENOME
 else
@@ -51,6 +53,10 @@ sleep 2
 PETAG=$(egrep "^QTAG=" $TDIR/pemapper_${SAMPLE}.log | tail -1 | sed 's/.*=//')
 echo PETAG=$PETAG
 
+#QRUN 1 ${TAG}___EXISTS___${SAMPLE} HOLD $PETAG \
+#    $SDIR/checkAndHoldOnFileExistance.sh out___/${SAMPLE}___MD.bam
+
+#QRUN 2 ${TAG}___SRTQN___${SAMPLE} HOLD ${TAG}___EXISTS___${SAMPLE} VMEM 36 \
 QRUN 2 ${TAG}___SRTQN___${SAMPLE} HOLD $PETAG VMEM 36 \
     picardV2 SortSam SO=queryname \
         I=out___/${SAMPLE}___MD.bam \
