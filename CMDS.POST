@@ -1,4 +1,4 @@
-ls out___/*SrtQN*.bam  | xargs -n 1 bsub -o LSF.COUNT/ -J COUNT -W 59 -n 5 ./ChIPSeqKeeneyV2/getChromoCounts.sh 500
-
+ls out___/*SrtQN*.bam  | xargs -n 1 bsub -o LSF.COUNT/ -J COUNT_$$ -W 59 -n 5 ./ChIPSeqKeeneyV2/getChromoCounts.sh 500
+bSync COUNT_$$
 Rscript --no-save ChIPSeqKeeneyV2/computeCounts.R
 
